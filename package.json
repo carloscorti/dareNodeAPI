@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll",
+    "verify-tests": "jest --coverage",
     "dev": "nodemon --exec babel-node lib/server.js",
     "build-node": "babel lib -d build --config-file ./babel.config.js --copy-files"
   },
@@ -13,6 +14,7 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.8.1",
+    "jest": "26.4.2",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
