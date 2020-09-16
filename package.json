@@ -1,6 +1,11 @@
 {
   "name": "dare-assessment",
   "version": "1.0.0",
+  "private": "true",
+  "engines": {
+    "node": "12.18.3",
+    "npm": "6.14.6"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +13,9 @@
     "watch-test": "jest --watchAll",
     "verify-tests": "jest --coverage",
     "dev": "nodemon --exec babel-node lib/server.js",
-    "build-node": "babel lib -d build --config-file ./babel.config.js --copy-files"
+    "build-node": "babel lib -d build --config-file ./babel.config.js --copy-files",
+    "heroku-postbuild": "npm run build-node",
+    "start": "NODE_ENV=production pm2-runtime start build/server.js -i max --name APIProd"
   },
   "author": "",
   "license": "ISC",
@@ -28,7 +35,8 @@
     "@babel/runtime": "^7.11.2",
     "axios": "0.20.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "8.5.1"
+    "jsonwebtoken": "8.5.1",
+    "pm2": "4.4.1"
   },
   "jest": {
     "testEnvironment": "node",
