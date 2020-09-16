@@ -7,6 +7,7 @@ to describe endpoints
 # Features
 
 - Node API with 3 layers design (routes with middlewares, controller, services) modular, to easy to maintein, debug, test and scale
+- Authentication with jason web tokens (jwt)
 - API with pagination and filter by query
 - Node with ES6 features (uses import statements)
 - Test suite with Jest + Supertes for unit, integration and end-to-end tests
