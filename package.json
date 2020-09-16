@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest",
+    "watch-test": "jest --watchAll",
     "verify-tests": "jest --coverage",
     "dev": "nodemon --exec babel-node lib/server.js",
     "build-node": "babel lib -d build --config-file ./babel.config.js --copy-files"
@@ -15,7 +16,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.8.1",
     "jest": "26.4.2",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "supertest": "4.0.2"
   },
   "dependencies": {
     "@babel/cli": "^7.11.6",
@@ -27,5 +29,11 @@
     "axios": "0.20.0",
     "express": "^4.17.1",
     "jsonwebtoken": "8.5.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
