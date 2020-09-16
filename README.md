@@ -19,7 +19,7 @@ to describe endpoints
 
 This API is designed with a 3 layer scheme with middlewares, the goal is to delegate only one responsability to each component and have a modular app.
 
-- Middlewares are modules to set up on each route and add a given data or functionality like auhtentication
+- Middlewares are modules to set up on each route and add a given data or functionality like authentication
 - Routers handle endpoints config.
 - Controllers handle routers bussines logic.
 - Services are called by controllers to chek params, format data, filter data etc.
