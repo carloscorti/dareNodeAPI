@@ -1,8 +1,6 @@
 # Project
 
-dareNodeAPI, its a middleware API that conects with INSURANCE API REST to get clients and policies data, following this swagger
-https://dare-nodejs-assessment.herokuapp.com/assessment-swagger/static/index.html#/clients/findPoliciesByClientId
-to describe endpoints
+dareNodeAPI, is a middleware API that conects with INSURANCE API REST to get clients and policies data, following this swagger https://dare-nodejs-assessment.herokuapp.com/assessment-swagger/static/index.html to describe endpoints
 
 # Features
 
