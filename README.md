@@ -4,7 +4,7 @@ dareNodeAPI, is a middleware API that conects with INSURANCE API REST to get cli
 
 # Features
 
-- Node API with 3 layers design (routes with middlewares, controller, services) modular, to easy to maintein, debug, test and scale
+- Node API with 3 layers design (routes with middlewares, controller, services) modular, easy to maintein, debug, test and scale
 - Authentication with jason web tokens (jwt)
 - API with pagination and filter by query
 - Node with ES6 features (uses import statements)
@@ -23,7 +23,7 @@ This API is designed with a 3 layer scheme with middlewares, the goal is to dele
 - Controllers handle routers bussines logic.
 - Services are called by controllers to chek params, format data, filter data etc.
 
-That way the project is easy to maintain, debug, and scale. Beasides you can easily unit test each component by isolation
+That way the project is easy to maintain, debug, and scale. Beasides you can easily unit test each component in isolation
 
 ## Pagination
 
@@ -59,7 +59,7 @@ Will set results to 50 and show page 3, this is the expected respose
 You can filter clients by name with query strings this way,
 
 ```
-https://dare-insurance-assessment.herokuapp.com/api/v1/clients?name=britney
+https://dare-insurance-assessment.herokuapp.com/api/v1/clients?name=br
 ```
 
 Will filter on clients list by name, no case sensitive, this is the expected respose
