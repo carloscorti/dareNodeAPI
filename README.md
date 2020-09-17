@@ -1,6 +1,6 @@
 # Project
 
-dareNodeAPI, is a middleware API that conects with INSURANCE API REST to get clients and policies data, following this swagger https://dare-nodejs-assessment.herokuapp.com/assessment-swagger/static/index.html to describe endpoints
+dareNodeAPI, is a middleware API that conects with INSURANCE API REST to get clients and policies data, following this swagger https://dare-nodejs-assessment.herokuapp.com/assessment-swagger/ to describe endpoints
 
 # Features
 
@@ -25,10 +25,40 @@ This API is designed with a 3 layer scheme with middlewares, the goal is to dele
 
 That way the project is easy to maintain, debug, and scale. Beasides you can easily unit test each component in isolation
 
+## Login
+
+This API handles authentication via jeson web tokens. Each data request will be validated before retrive any response.\
+You can login with an .../api/v1/policies POST request, required body in json format as follows 
+
+```
+{
+  "username": "Registred_client_name",
+  "password": "Registred_client_email"
+}
+```
+Where "Registred_client_name" and "Registred_client_email" must be data matching a given client in clients list from INSURANCE API REST. Expected response
+
+```
+{
+    "token": "jwt_validation_token",
+    "type": "bearer",
+    "expires_in": 21600
+}
+```
+If client to be logged in mismatches all clients on INSURANCE API REST clients list, then expected response will be 
+
+```
+{
+    "code": 401,
+    "message": "no user registred: check username and password spelling"
+}
+```
+
+
 ## Pagination
 
-/api/v1/clients and /api/v1/policies endpoints have pagination feature, default limit=10 default page=1.
-You can set limit and page query strings this way,
+/api/v1/clients and /api/v1/policies endpoints have pagination feature, default limit=10 default page=1.\
+You can set limit and page query strings this way
 
 ```
 https://dare-insurance-assessment.herokuapp.com/api/v1/clients?page=3&limit=50
@@ -55,8 +85,7 @@ Will set results to 50 and show page 3, this is the expected respose
 
 ## Filter by Query
 
-/api/v1/clients endpoint has filter by query feature.
-You can filter clients by name with query strings this way,
+/api/v1/clients endpoint has filter by query feature. You can filter clients by name with query strings this way,
 
 ```
 https://dare-insurance-assessment.herokuapp.com/api/v1/clients?name=br
